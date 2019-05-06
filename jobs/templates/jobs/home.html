@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Portfolio web-page">
@@ -38,17 +39,17 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Evgene Dyudyunov</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Evgene Dyudyunov</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="#" target="_blank">Resume</span></a>
+          <a class="nav-item nav-link active" href="{% url 'home' %}">Portfolio</span></a>
+          <a class="nav-item nav-link" href="{% static 'Dyudyunov_CV.pdf' %}" target="_blank">Resume</span></a>
           <a class="nav-item nav-link" href="https://github.com/dyudyunov" target="_blank">GitHub</a>
-          <!-- <a class="nav-item nav-link" href="#">Mail me</a> -->
-          <a class="nav-item nav-link" href="#" target="_blank">Blog</a>
+          <a class="nav-item nav-link" href="{% url 'all_posts' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -58,12 +59,17 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1 class="jumbotron-heading">Wellcome to my portfolio page!</h1>
-        <p class="lead text-muted">My name is Eugene and I love to make django-based websites and other staff with
-          python. Here's below You can see some projects that I've allready done. If You have some questions please use button below or any other way to contact Me.</p>
-        <p>
-          <a href="mailto:evgen.dyudyunov@gmail.com" class="btn btn-primary my-2">Email Me</a>
-        </p>
+        <div>
+          <img src={% static 'av.jpg' %} width=300>
+        </div>
+        <div>
+          <h1 class="jumbotron-heading">Wellcome to my portfolio page!</h1>
+          <p class="lead text-muted">My name is Eugene and I love to make django-based websites and other staff with
+            python. Here's below You can see some projects that I've allready done. If You have some questions please use button below or any other way to contact Me.</p>
+          <p>
+            <a href="mailto:evgen.dyudyunov@gmail.com" class="btn btn-primary my-2">Email Me</a>
+          </p>
+        </div>
       </div>
     </section>
 
